@@ -1,0 +1,10 @@
+--- original/org/jfree/data/time/TimeSeries.java
++++ fixed/org/jfree/data/time/TimeSeries.java
+@@ -885 +885 @@ public class TimeSeries extends Series implements Cloneable, Serializable
+            if (removed) {
+                findBoundsByIteration();
+-                if (notify) {
++               if (org.jfree.data.time.TimeSeries.this.data!=null) {
+                    fireSeriesChanged();
+                }
+            }
