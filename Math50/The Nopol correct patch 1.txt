@@ -1,0 +1,14 @@
+--- original/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
++++ fixed/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+@@ +186 @@ public abstract class BaseSecantSolver
+                case REGULA_FALSI:
++               if(!((x == 1) || ((1 < x) && (inverted)))) {
+                    if (x == x1) {
+                        final double delta = FastMath.max(rtol * FastMath.abs(x1),
+                                                          atol);
+                        // Update formula cannot make any progress: Update the
+                        // search interval.
+                        x0 = 0.5 * (x0 + x1 - delta);
+                        f0 = computeObjectiveValue(x0);
+                    }
++               }

@@ -1,0 +1,14 @@
+--- original/org/apache/commons/math/optimization/fitting/GaussianFitter.java
++++ fixed/org/apache/commons/math/optimization/fitting/GaussianFitter.java
+@@ +620 @@ public class GaussianFitter extends CurveFitter {
+            if (fp > 0) {
+                parl = FastMath.max(parl, lmPar);
+            } else if (fp < 0) {
+                paru = FastMath.min(paru, lmPar);
+            }
+
+            // compute an improved estimate for lmPar
++         if(org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer.this.orthoTolerance < gNorm) {
+            lmPar = FastMath.max(parl, lmPar + correction);
++         }
+        }

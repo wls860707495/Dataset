@@ -1,0 +1,15 @@
+--- original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
++++ fixed/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+@@ +235 @@ public class BracketingNthOrderBrentSolver
+            double targetY;
+            if (agingA >= MAXIMAL_AGING) {
+                // we keep updating the high bracket, try to compensate this
++             signChangeIndex++；
+                targetY = -REDUCTION_FACTOR * yB;
+            } else if (agingB >= MAXIMAL_AGING) {
+                // we keep updating the low bracket, try to compensate this
+                targetY = -REDUCTION_FACTOR * yA;
+            } else {
+                // bracketing is balanced, try to find the root itself
+                targetY = 0;
+            }
