@@ -1,0 +1,9 @@
+--- original/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
++++ fixed/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
+@@ -301 @@ public class StatisticalBarRenderer extends BarRenderer implements CategoryItemRenderer, Cloneable, PublicCloneable, Serializable
+        double rectX = Math.min(transY2, transY1);
+        double rectHeight = state.getBarWidth();
+-       double rectWidth = Math.abs(transY2 - transY1);
+        Rectangle2D bar = new Rectangle2D.Double(rectX, rectY, rectWidth, 
+              rectHeight);
+        Paint seriesPaint = getItemPaint(row, column);

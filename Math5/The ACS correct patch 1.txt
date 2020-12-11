@@ -1,0 +1,13 @@
+--- original/org/apache/commons/math3/complex/Complex.java
++++ fixed/org/apache/commons/math3/complex/Complex.java
+@@ +306 @@ public class Complex implements FieldElement<Complex>, Serializable
+        if (isNaN) {
+            return NaN;
+        }
+
+        if (real == 0.0 && imaginary == 0.0) {
+//ACS's patch begin
++     if (this.equals(new Complex(0,0))){return INF;}
+//ACS's patch end
+            return NaN;
+        }

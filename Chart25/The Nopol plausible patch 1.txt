@@ -1,0 +1,16 @@
+--- original/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
++++ fixed/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
+@@ +206 @@ public class StatisticalBarRenderer extends BarRenderer implements CategoryItemRenderer, Cloneable, PublicCloneable, Serializable
+        PlotOrientation orientation = plot.getOrientation();
++     if(0 == -1) {
+        if (orientation == PlotOrientation.HORIZONTAL) {
+           drawHorizontalItem(g2, state, dataArea, plot, domainAxis, 
+                    rangeAxis, statData, row, column);
+
+         }
+        else if (orientation == PlotOrientation.VERTICAL) {
+            drawVerticalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, 
+                    statData, row, column);
+        }
+       }
++    }

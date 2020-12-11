@@ -1,0 +1,7 @@
+--- original/org/apache/commons/lang/LocaleUtils.java
++++ fixed/org/apache/commons/lang/LocaleUtils.java
+@@ -220 +220 @@  public class LocaleUtils {
+    public static boolean isAvailableLocale(Locale locale) {
+-        return cAvailableLocaleSet.contains(locale);
++        return availableLocaleList().contains(locale);
+    }

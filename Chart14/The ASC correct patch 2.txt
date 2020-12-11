@@ -1,0 +1,11 @@
+--- original/org/jfree/chart/plot/CategoryPlot.java
++++ fixed/org/jfree/chart/plot/CategoryPlot.java
+@@ +2533 @@ public class CategoryPlot extends Plot implements ValueAxisPlot, Zoomable, RendererChangeListener, Cloneable, PublicCloneable, Serializable
+//ACS's patch begin
++      if (markers == null){return false;}        
+//ACS's patch end
+        boolean removed = markers.remove(marker);
+        if (removed && notify) {
+            fireChangeEvent();
+        }
+        return removed;
